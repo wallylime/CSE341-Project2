@@ -48,47 +48,53 @@ content-type: application/json
 DELETE http://localhost:8080/chores/delete/6463f2359c95f9aae9212068 HTTP/1.1
 
 
-# #--PRODUCTION DEPLOY---#
-# ###
-# //See API Docs
-# GET https://cse341-vvco.onrender.com/api-docs
+#--PRODUCTION DEPLOY---#
+###
+//See API Docs
+GET https://cse341-project2-zuaa.onrender.com/api-docs
 
-# ###
-# //Get all contacts in the database
-# GET https://cse341-vvco.onrender.com/contacts 
+###
+//Get all chores
+GET https://cse341-project2-zuaa.onrender.com/chores 
 
-# ###
-# //Get just one contact by id
-# GET https://cse341-vvco.onrender.com/contacts/644c1630d0b2ed679586b3d9
+###
+//Get a chore by id
+GET https://cse341-project2-zuaa.onrender.com/chores/6463ee7d9c95f9aae921205e
 
-# ###
-# //Add a contact
-# POST https://cse341-vvco.onrender.com/contacts/add HTTP/1.1
-# Content-Type: application/json
+###
+//Add a chore
+POST https://cse341-project2-zuaa.onrender.com/chores/add HTTP/1.1
+Content-Type: application/json
 
-# {
-# "firstName":"Gideon",
-# "lastName":"Wall",
-# "favoriteColor":"blue",
-# "birthday": "08/04/2008",
-# "email":"gideonwall435@gmail.com"
-# }
+{
+  "choreName":"sweep the driveway and sidewalk",
+  "estimatedTime":"15 minutes",
+  "indoor":"false",
+  "outdoor":"true",
+  "spring":"true",
+  "summer":"true",
+  "fall":"true",
+  "winter":"true"
+}
 
-# ###
-# //Edit a contact
-# PUT https://cse341-vvco.onrender.com/contacts/edit/644c1630d0b2ed679586b3d9 HTTP/1.1
-# Content-Type: application/json
+###
+//Edit a chore
+PUT https://cse341-project2-zuaa.onrender.com/chores/edit/6463ee7d9c95f9aae921205e HTTP/1.1
+Content-Type: application/json
 
-# {
-# "firstName":"Ambrose Dude",
-# "lastName":"Wall",
-# "favoriteColor":"black",
-# "birthday": "02/13/2013",
-# "email":"newEmail@gmail.com"
-# }
+{
+  "choreName":"fold the laundry",
+  "estimatedTime":"25 minutes",
+  "indoor":"true",
+  "outdoor":"false",
+  "spring":"true",
+  "summer":"true",
+  "fall":"true",
+  "winter":"true"
+}
 
-# ###
-# //Delete a contact
-# DELETE https://cse341-vvco.onrender.com/contacts/delete/645d58ab38c29d9ad7888f7f HTTP/1.1
+###
+//Delete a chore
+DELETE https://https://cse341-project2-zuaa.onrender.com/chores/delete/6463f2359c95f9aae9212068 HTTP/1.1
 
 
