@@ -1,0 +1,94 @@
+// LOCALHOST 
+###
+//See API Docs
+GET http://localhost:8080/api-docs HTTP/1.1
+
+###
+//Get all chores in the database
+GET http://localhost:8080/chores HTTP/1.1
+
+###
+//Get a chore by id
+GET http://localhost:8080/chores/6463ee7d9c95f9aae921205e HTTP/1.1
+
+###
+//Add a chore
+POST http://localhost:8080/chores/add HTTP/1.1
+content-type: application/json
+
+{
+  "choreName":"sweep the driveway and sidewalk",
+  "estimatedTime":"15 minutes",
+  "indoor":"false",
+  "outdoor":"true",
+  "spring":"true",
+  "summer":"true",
+  "fall":"true",
+  "winter":"true"
+}
+
+###
+//Edit a chore
+PUT http://localhost:8080/chores/edit/6463ee7d9c95f9aae921205e HTTP/1.1
+content-type: application/json
+
+{
+  "choreName":"fold the laundry",
+  "estimatedTime":"25 minutes",
+  "indoor":"true",
+  "outdoor":"false",
+  "spring":"true",
+  "summer":"true",
+  "fall":"true",
+  "winter":"true"
+}
+
+###
+//Delete a chore
+DELETE http://localhost:8080/chores/delete/6463f2359c95f9aae9212068 HTTP/1.1
+
+
+# #--PRODUCTION DEPLOY---#
+# ###
+# //See API Docs
+# GET https://cse341-vvco.onrender.com/api-docs
+
+# ###
+# //Get all contacts in the database
+# GET https://cse341-vvco.onrender.com/contacts 
+
+# ###
+# //Get just one contact by id
+# GET https://cse341-vvco.onrender.com/contacts/644c1630d0b2ed679586b3d9
+
+# ###
+# //Add a contact
+# POST https://cse341-vvco.onrender.com/contacts/add HTTP/1.1
+# Content-Type: application/json
+
+# {
+# "firstName":"Gideon",
+# "lastName":"Wall",
+# "favoriteColor":"blue",
+# "birthday": "08/04/2008",
+# "email":"gideonwall435@gmail.com"
+# }
+
+# ###
+# //Edit a contact
+# PUT https://cse341-vvco.onrender.com/contacts/edit/644c1630d0b2ed679586b3d9 HTTP/1.1
+# Content-Type: application/json
+
+# {
+# "firstName":"Ambrose Dude",
+# "lastName":"Wall",
+# "favoriteColor":"black",
+# "birthday": "02/13/2013",
+# "email":"newEmail@gmail.com"
+# }
+
+# ###
+# //Delete a contact
+# DELETE https://cse341-vvco.onrender.com/contacts/delete/645d58ab38c29d9ad7888f7f HTTP/1.1
+
+
