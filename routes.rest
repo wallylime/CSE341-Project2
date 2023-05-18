@@ -17,14 +17,14 @@ POST http://localhost:8080/chores/add HTTP/1.1
 content-type: application/json
 
 {
-  "choreName":"sweep the driveway and sidewalk",
+  "choreName":"test booleans",
   "estimatedTime":"15 minutes",
-  "indoor":"false",
-  "outdoor":"true",
-  "spring":"true",
-  "summer":"true",
-  "fall":"true",
-  "winter":"true"
+  "indoor":false,
+  "outdoor":true,
+  "spring":true,
+  "summer":true,
+  "fall":true,
+  "winter":true
 }
 
 ###
@@ -34,18 +34,18 @@ content-type: application/json
 
 {
   "choreName":"fold the laundry",
-  "estimatedTime":"25 minutes",
-  "indoor":"true",
-  "outdoor":"false",
-  "spring":"true",
-  "summer":"true",
-  "fall":"true",
-  "winter":"true"
+  "estimatedTime":"20 minutes",
+  "indoor":true,
+  "outdoor":false,
+  "spring":true,
+  "summer":true,
+  "fall":true,
+  "winter":true
 }
 
 ###
 //Delete a chore
-DELETE http://localhost:8080/chores/delete/6463f2359c95f9aae9212068 HTTP/1.1
+DELETE http://localhost:8080/chores/delete/64666d8d1f3deff70ee3f85d HTTP/1.1
 
 
 #--PRODUCTION DEPLOY---#
@@ -67,14 +67,14 @@ POST https://cse341-project2-zuaa.onrender.com/chores/add HTTP/1.1
 Content-Type: application/json
 
 {
-  "choreName":"sweep the driveway and sidewalk",
-  "estimatedTime":"15 minutes",
-  "indoor":"false",
-  "outdoor":"true",
-  "spring":"true",
-  "summer":"true",
-  "fall":"true",
-  "winter":"true"
+  "choreName":"shovel snow",
+  "estimatedTime":"30 minutes",
+  "indoor":false,
+  "outdoor":true,
+  "spring":false,
+  "summer":false,
+  "fall":false,
+  "winter":true
 }
 
 ###
@@ -95,6 +95,6 @@ Content-Type: application/json
 
 ###
 //Delete a chore
-DELETE https://https://cse341-project2-zuaa.onrender.com/chores/delete/6463f2359c95f9aae9212068 HTTP/1.1
+DELETE https://cse341-project2-zuaa.onrender.com/chores/delete/6463f2359c95f9aae9212068 HTTP/1.1
 
 
