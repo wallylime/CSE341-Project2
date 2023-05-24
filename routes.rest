@@ -45,7 +45,7 @@ content-type: application/json
 
 ###
 //Delete a chore
-DELETE http://localhost:8080/chores/delete/64666d8d1f3deff70ee3f85d HTTP/1.1
+DELETE http://localhost:8080/chores/delete/646e4c0d084ca751e9d1ca5a HTTP/1.1
 
 
 #--PRODUCTION DEPLOY---#
@@ -67,7 +67,7 @@ POST https://cse341-project2-zuaa.onrender.com/chores/add HTTP/1.1
 Content-Type: application/json
 
 {
-  "choreName":"shovel snow",
+  "choreName":"here's a new chore to test",
   "estimatedTime":"30 minutes",
   "indoor":false,
   "outdoor":true,
