@@ -9,7 +9,7 @@ GET http://localhost:8080/chores HTTP/1.1
 
 ###
 //Get a chore by id
-GET http://localhost:8080/chores/6463ee7d9c95f9aae921205 HTTP/1.1
+GET http://localhost:8080/chores/64667bddf328a14c170fd987 HTTP/1.1
 
 ###
 //Add a chore
