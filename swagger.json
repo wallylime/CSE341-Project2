@@ -5,10 +5,10 @@
     "description": "Project2 API",
     "version": "1.0.0"
   },
-  "host": "cse341-project2-zuaa.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/chores/": {

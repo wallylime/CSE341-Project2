@@ -3,11 +3,8 @@ const ObjectId = require('mongodb').ObjectId;
 
 //This will get a list of all chores
 const getChores = async (req, res) => {
-  mongodb.getDb().db().collection('chores').find()
-  .toArray((err, choreList) => {
-    if (err) {
-      res.status(400).json({ message: err });
-    }
+  const result = await mongodb.getDb().db().collection('chores').find(); //no arguments given, so it will return all
+  result.toArray().then((choreList) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(choreList);
   });
@@ -15,18 +12,14 @@ const getChores = async (req, res) => {
 
 //This will get a specific chore
 const getSingleChore = async (req, res) => {
-  //Check that the id given is a valid mongoDB id
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid chore id to find a specific chore.');
+    res.status(400).json('Must use a valid chore id.');
   }
   const choreId = new ObjectId(req.params.id);
-  mongodb.getDb().db().collection('chores').find({ _id: choreId })
-  .toArray((err, choreList) => {
-    if (err) {
-      res.status(400).json({ message: err });
-    }
+  const result = await mongodb.getDb().db().collection('chores').find({ _id: choreId });
+  result.toArray().then((choreList) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(choreList[0]);
+    res.status(200).json(choreList[0]); //This will display the first record returned that matched the argument in the find function
   });
 };
 
@@ -52,9 +45,8 @@ const addChore = async (req, res) => {
 
 //This will edit a chore
 const editChore = async (req, res) => {
-  //Check that the id given is a valid mongoDB id
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid chore id to edit a chore.');
+    res.status(400).json('Must use a valid chore id.');
   }
   const choreId = new ObjectId(req.params.id);
   const updateChore = {
@@ -77,9 +69,8 @@ const editChore = async (req, res) => {
 
 //This will delete a chore
 const deleteChore = async (req, res) => {
-  //Check that the id given is a valid mongoDB id
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid chore id to delete a chore.');
+    res.status(400).json('Must use a valid chore id.');
   }
   const choreId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db().collection('chores').deleteOne({ _id: choreId });
