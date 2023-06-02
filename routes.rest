@@ -47,6 +47,32 @@ content-type: application/json
 //Delete a chore
 DELETE http://localhost:8080/chores/delete/6470f6e6a982e946348981b3 HTTP/1.1
 
+###
+//Get all chore assignments in the database
+GET http://localhost:8080/choreAssignments HTTP/1.1
+
+###
+//Get one child's chore assignment by id
+GET http://localhost:8080/choreAssignments/647a26000fb73088f7991e9a HTTP/1.1
+
+###
+//Edit a chore assignment
+PUT http://localhost:8080/choreAssignments/edit/647a26000fb73088f7991e9a HTTP/1.1
+content-type: application/json
+
+{
+  "name":"Silas",
+  "monday":"rake leaves",
+  "tuesday":"clean the kitchen",
+  "wednesday":"clean the bathrooms",
+  "thursday":"clean the living room",
+  "friday":"pull weeds"
+}
+
+###
+//Delete a chore assignment
+DELETE http://localhost:8080/choreAssignments/delete/647a27020fb73088f7991e9d HTTP/1.1
+
 
 #--PRODUCTION DEPLOY---#
 ###
