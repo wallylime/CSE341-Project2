@@ -123,4 +123,30 @@ Content-Type: application/json
 //Delete a chore
 DELETE https://cse341-project2-zuaa.onrender.com/chores/delete/6463f2359c95f9aae9212068 HTTP/1.1
 
+###
+//Get all chore assignments
+GET https://cse341-project2-zuaa.onrender.com/choreAssignments
+
+###
+//Get one child's chore assignment by id
+GET https://cse341-project2-zuaa.onrender.com/choreAssignments/647a26000fb73088f7991e9a
+
+###
+//Edit a chore assignment
+PUT https://cse341-project2-zuaa.onrender.com/choreAssignments/edit/647a26000fb73088f7991e9a HTTP/1.1
+Content-Type: application/json
+
+{
+  "name":"Silas",
+  "monday":"mow the back lawn",
+  "tuesday":"clean your bedroom",
+  "wednesday":"clean the bathrooms",
+  "thursday":"clean the living room",
+  "friday":"pull weeds"
+}
+
+###
+//Delete a chore assignment
+DELETE https://cse341-project2-zuaa.onrender.com/choreAssignments/delete/6463f2359c95f9aae9212068 HTTP/1.1
+
 
