@@ -62,8 +62,8 @@ content-type: application/json
 
 {
   "name":"Silas",
-  "monday":"rake leaves",
-  "tuesday":"clean the kitchen",
+  "monday":"mow the back lawn",
+  "tuesday":"clean your bedroom",
   "wednesday":"clean the bathrooms",
   "thursday":"clean the living room",
   "friday":"pull weeds"

@@ -30,6 +30,30 @@ const saveChore = (req, res, next) => {
   });
 };
 
+const editAssignment = (req, res, next) => {
+  const validationRule = {
+    name: 'required|string',
+    monday: 'required|string',
+    tuesday: 'required|string',
+    wednesday: 'required|string',
+    thursday: 'required|string',
+    friday: 'required|string'
+  };
+
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
-  saveChore
+  saveChore,
+  editAssignment
 };
