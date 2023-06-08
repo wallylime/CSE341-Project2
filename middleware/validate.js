@@ -30,7 +30,7 @@ const saveChore = (req, res, next) => {
   });
 };
 
-const editAssignment = (req, res, next) => {
+const saveAssignment = (req, res, next) => {
   const validationRule = {
     name: 'required|string',
     monday: 'required|string',
@@ -55,5 +55,5 @@ const editAssignment = (req, res, next) => {
 
 module.exports = {
   saveChore,
-  editAssignment
+  saveAssignment
 };

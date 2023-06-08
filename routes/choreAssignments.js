@@ -17,8 +17,8 @@ const checkAuth = (req, res, next) => {
 
 router.get('/', choreAssignmentsController.getChoreAssignments);
 router.get('/:id', choreAssignmentsController.getOneChildAssignment);
-// Need to add post 
-router.put('/edit/:id', checkAuth, validator.editAssignment, choreAssignmentsController.editChoreAssignment);
+router.post('/add', checkAuth, validator.saveAssignment, choreAssignmentsController.addChoreAssignment);
+router.put('/edit/:id', checkAuth, validator.saveAssignment, choreAssignmentsController.editChoreAssignment);
 router.delete('/delete/:id', checkAuth, choreAssignmentsController.deleteChoreAssignment);
 
 module.exports = router;

@@ -56,6 +56,20 @@ GET http://localhost:8080/choreAssignments HTTP/1.1
 GET http://localhost:8080/choreAssignments/647a26000fb73088f7991e9a HTTP/1.1
 
 ###
+//Add a new chore assignment
+POST http://localhost:8080/choreAssignments/add HTTP/1.1
+content-type: application/json
+
+{
+  "name":"Adding a New Assignment",
+  "monday":"mow the back lawn",
+  "tuesday":"clean your bedroom",
+  "wednesday":"clean the bathrooms",
+  "thursday":"clean the living room",
+  "friday":"pull weeds"
+}
+
+###
 //Edit a chore assignment
 PUT http://localhost:8080/choreAssignments/edit/647a26000fb73088f7991e9a HTTP/1.1
 content-type: application/json
@@ -130,6 +144,20 @@ GET https://cse341-project2-zuaa.onrender.com/choreAssignments
 ###
 //Get one child's chore assignment by id
 GET https://cse341-project2-zuaa.onrender.com/choreAssignments/647a26000fb73088f7991e9a
+
+###
+//Add a new chore assignment
+POST http://localhost:8080/choreAssignments/add HTTP/1.1
+content-type: application/json
+
+{
+  "name":"Adding a New Assignment",
+  "monday":"mow the back lawn",
+  "tuesday":"clean your bedroom",
+  "wednesday":"clean the bathrooms",
+  "thursday":"clean the living room",
+  "friday":"pull weeds"
+}
 
 ###
 //Edit a chore assignment

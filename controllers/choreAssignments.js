@@ -33,6 +33,28 @@ const getOneChildAssignment = async (req, res) => {
   }
 };
 
+//This will add a new chore assignment document
+const addChoreAssignment = async (req, res) => {
+  try {
+    const newAssignment = {
+      name: req.body.name,
+      monday: req.body.monday,
+      tuesday: req.body.tuesday,
+      wednesday: req.body.wednesday,
+      thursday: req.body.thursday,
+      friday: req.body.friday
+    };
+    const response = await mongodb.getDb().db().collection('choreAssignments').insertOne(newAssignment);
+    if (response.acknowledged) {
+      res.status(201).json(response);
+    } else {
+      res.status(500).json(response.error || 'Sorry, an error occurred while creating the new chore assignment.');
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
 //This will edit a chore assignment
 const editChoreAssignment = async (req, res) => {
   try {
@@ -80,6 +102,7 @@ const deleteChoreAssignment = async (req, res) => {
 module.exports = {
   getChoreAssignments,
   getOneChildAssignment,
+  addChoreAssignment,
   editChoreAssignment,
   deleteChoreAssignment
 };

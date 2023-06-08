@@ -240,6 +240,51 @@
         }
       }
     },
+    "/choreAssignments/add": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "monday": {
+                  "example": "any"
+                },
+                "tuesday": {
+                  "example": "any"
+                },
+                "wednesday": {
+                  "example": "any"
+                },
+                "thursday": {
+                  "example": "any"
+                },
+                "friday": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/choreAssignments/edit/{id}": {
       "put": {
         "description": "",
