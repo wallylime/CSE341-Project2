@@ -23,7 +23,7 @@ app
     console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
   });
 app.get('/login', (req, res) => {
-  res.redirect(`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`)
+  res.redirect(`https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&prompt=consent`)
 })
 app.get('/callback', (req, res) => {
   const {code} = req.query;
